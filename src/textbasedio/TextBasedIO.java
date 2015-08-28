@@ -263,6 +263,7 @@ public class TextBasedIO {
         String[] names = new String[peopleNumber];
         int[] ages = new int[peopleNumber];
         String[] color = new String[peopleNumber];
+        String[] order = { "first", "second", "third" };
         int i = 0;
         String t = "\t";
         //TODO: understand enhanced for loops
@@ -271,33 +272,16 @@ public class TextBasedIO {
 //            System.out.println( "Enter person #" + (i+1) + "'s name:");
 //            names[i++] = keyboard.next();
 //        }      
-        
-        System.out.println( "Enter the first person's name:");
-        names[i] = keyboard.next();
-        
-        System.out.println( "Enter " + names[i] + "'s age:");
-        ages[i] = keyboard.nextInt();
-        
-        System.out.println( "Enter " + names[i] + "'s favourite color:");
-        color[i++] = keyboard.next();
-        
-        System.out.println( "Enter the second person's name:");
-        names[i] = keyboard.next();
-        
-        System.out.println( "Enter " + names[i] + "'s age:");
-        ages[i] = keyboard.nextInt();
-        
-        System.out.println( "Enter " + names[i] + "'s favourite color:");
-        color[i++] = keyboard.next();
-        
-        System.out.println( "Enter the third person's name:");
-        names[i] = keyboard.next();
-        
-        System.out.println( "Enter " + names[i] + "'s age:");
-        ages[i] = keyboard.nextInt();
-        
-        System.out.println( "Enter " + names[i] + "'s favourite color:");
-        color[i++] = keyboard.next();
+        for (; i <peopleNumber; ++i) {
+            System.out.println( "Enter the " + order[i] + " person's name:");
+            names[i] = keyboard.next();
+
+            System.out.println( "Enter " + names[i] + "'s age:");
+            ages[i] = keyboard.nextInt();
+
+            System.out.println( "Enter " + names[i] + "'s favourite color:");
+            color[i] = keyboard.next();
+        }
         
         System.out.println( "Name\tAge\tFavorite Color \n"
                 + "=====================================================");
