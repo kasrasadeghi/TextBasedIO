@@ -263,16 +263,11 @@ public class TextBasedIO {
         String[] names = new String[peopleNumber];
         int[] ages = new int[peopleNumber];
         String[] color = new String[peopleNumber];
-        String[] order = { "first", "second", "third" };
-        int i = 0;
+        String[] order = { "first", "second", "third", "fourth", "fifth" };
         String t = "\t";
         //TODO: understand enhanced for loops
         
-//        for ( String name: names ) {
-//            System.out.println( "Enter person #" + (i+1) + "'s name:");
-//            names[i++] = keyboard.next();
-//        }      
-        for (; i <peopleNumber; ++i) {
+        for (int i = 0; i <peopleNumber; ++i) {
             System.out.println( "Enter the " + order[i] + " person's name:");
             names[i] = keyboard.next();
 
@@ -283,11 +278,11 @@ public class TextBasedIO {
             color[i] = keyboard.next();
         }
         
-        System.out.println( "Name\tAge\tFavorite Color \n"
+        System.out.println( "Name\t\tAge\t\tFavorite Color \n"
                 + "=====================================================");
         
-        for (int j = 0; j<3; ++j) {
-            System.out.println( names[j] + t + ages[j] + t + color[j]);
+        for (int j = 0; j<peopleNumber; ++j) {
+            System.out.println( names[j] + t + t + ages[j] + t + t + color[j]);
         }
     } 
 }
