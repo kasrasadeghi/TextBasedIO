@@ -32,8 +32,8 @@ public class TextBasedIO {
         // introduction to reading input, Scanner class
          //inputDemo();
          //circleAreaWithInput();
-        squarePerimeterWithInput();
-        rectangleAreaWithInput();        
+         //squarePerimeterWithInput();
+         //rectangleAreaWithInput();        
         
         // special characters
          //quotePrinter();
@@ -44,7 +44,7 @@ public class TextBasedIO {
          //textagon();
          //squarePerimeterWithInput();
          //rectangleAreaWithInput();
-         //nameAgeFavoriteColorWithInput();
+         nameAgeFavoriteColorWithInput();
     }
     
     public static void helloWorldDemo()
@@ -206,33 +206,104 @@ public class TextBasedIO {
     public static void rectangleAreaWithInput()
     {
        Scanner keyboard = new Scanner( System.in );
-       System.out.println( "Side lengths? \n"
+       System.out.println( "Side lengths of your rectangle? \n"
                + "[number] [number] ENTER" );
-       String side = keyboard.nextLine();
-       System.out.println( side);
+       String sideInput = keyboard.nextLine();
+       String[] sides = sideInput.split(" ");
+       System.out.println( "Side one is " + sides[0] + " and side two is "
+               + sides[1] + ".");
+       System.out.println( "The area of a rectangle with those sides is " 
+               + (Double.parseDouble(sides[0]) * Double.parseDouble(sides[1])) 
+               + ".");
     }
 
     private static void quotePrinter() 
     {
-       
+       System.out.println( "\"Ask not what your country can do for you but what you can do for your country\" - John F. Kennedy");
     }
 
     private static void poemPrinter() 
     {
+        System.out.println( "\\Haikus are easy\\\n" +
+            "\\But sometimes they don't make sense\\\n" +
+            "\\Refrigerator\\");
     }
 
     private static void tablePrinter() 
     {
-    
+        System.out.println( "Item                  	Price\n"
+                + "========================\n"
+                + "Hamburgers   	$5.00\n"
+                + "Fries                  	$1.50\n"
+                + "Shakes              	$3.75");
     }
 
-    private static void textagon() {
-        
+    private static void textagon() 
+    {
+        System.out.println( "   /----\\\n"
+                + "  /      \\\n"
+                + " /        \\\n"
+                + "/      	\\\n"
+                + "|      	|\n"
+                + "|      	|\n"
+                + "|      	|\n"
+                + "|      	|\n"
+                + "\\      	/\n"
+                + " \\        /\n"
+                + "  \\      /\n"
+                + "   \\----/");
     }
 
-    private static void nameAgeFavoriteColorWithInput() {
+    private static void nameAgeFavoriteColorWithInput() 
+    {
+        Scanner keyboard = new Scanner( System.in );
         
-    }
-    
-    
+        System.out.println( "Enter number of people:");
+        int peopleNumber = keyboard.nextInt();
+        String[] names = new String[peopleNumber];
+        int[] ages = new int[peopleNumber];
+        String[] color = new String[peopleNumber];
+        int i = 0;
+        String t = "\t";
+        //TODO: understand enhanced for loops
+        
+//        for ( String name: names ) {
+//            System.out.println( "Enter person #" + (i+1) + "'s name:");
+//            names[i++] = keyboard.next();
+//        }      
+        
+        System.out.println( "Enter the first person's name:");
+        names[i] = keyboard.next();
+        
+        System.out.println( "Enter " + names[i] + "'s age:");
+        ages[i] = keyboard.nextInt();
+        
+        System.out.println( "Enter " + names[i] + "'s favourite color:");
+        color[i++] = keyboard.next();
+        
+        System.out.println( "Enter the second person's name:");
+        names[i] = keyboard.next();
+        
+        System.out.println( "Enter " + names[i] + "'s age:");
+        ages[i] = keyboard.nextInt();
+        
+        System.out.println( "Enter " + names[i] + "'s favourite color:");
+        color[i++] = keyboard.next();
+        
+        System.out.println( "Enter the third person's name:");
+        names[i] = keyboard.next();
+        
+        System.out.println( "Enter " + names[i] + "'s age:");
+        ages[i] = keyboard.nextInt();
+        
+        System.out.println( "Enter " + names[i] + "'s favourite color:");
+        color[i++] = keyboard.next();
+        
+        System.out.println( "Name\tAge\tFavorite Color \n"
+                + "=====================================================");
+        
+        for (int j = 0; j<3; ++j) {
+            System.out.println( names[j] + t + ages[j] + t + color[j]);
+        }
+    } 
 }
